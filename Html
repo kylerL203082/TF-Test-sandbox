@@ -67,13 +67,22 @@ align-items:center;
 gap:12px
 }
 
+/* TRADEFORGE LOGO */
 .logo{
-background:var(--blue);
-color:#fff;
-font-weight:900;
-font-size:20px;
-padding:15px;
-border-radius:13px
+width:86px;
+height:86px;
+padding:0;
+border-radius:16px;
+overflow:hidden;
+background:#000;
+flex:0 0 86px
+}
+
+.logo img{
+display:block;
+width:100%;
+height:100%;
+object-fit:cover
 }
 
 h1{
@@ -102,6 +111,7 @@ font-weight:800
 
 .sync-actions{
 display:grid;
+grid-template-columns:1fr;
 gap:7px
 }
 
@@ -210,8 +220,7 @@ gap:15px;
 margin-top:16px
 }
 
-.team,
-.result-card{
+.team{
 margin-top:0
 }
 
@@ -237,9 +246,7 @@ max-height:320px;
 overflow:auto
 }
 
-.results.show{
-display:block
-}
+.results.show{display:block}
 
 .result-item{
 padding:9px;
@@ -250,9 +257,7 @@ justify-content:space-between;
 gap:10px
 }
 
-.result-item:hover{
-background:var(--card2)
-}
+.result-item:hover{background:var(--card2)}
 
 .player{
 display:grid;
@@ -297,9 +302,9 @@ display:block;
 color:var(--muted)
 }
 
-.total strong{
-font-size:20px
-}
+.total strong{font-size:20px}
+
+.result-card{margin-top:0}
 
 .meter{
 height:15px;
@@ -405,9 +410,7 @@ justify-content:center;
 padding:15px
 }
 
-.modal-bg.show{
-display:flex
-}
+.modal-bg.show{display:flex}
 
 .modal{
 width:min(550px,100%);
@@ -422,9 +425,7 @@ justify-content:space-between;
 gap:10px
 }
 
-.modal h2{
-margin-top:0
-}
+.modal h2{margin-top:0}
 
 #league-wrap{
 display:none;
@@ -437,9 +438,7 @@ color:var(--muted);
 margin-top:10px
 }
 
-.page-hidden{
-display:none!important
-}
+.page-hidden{display:none!important}
 
 .page-toolbar{
 display:flex;
@@ -449,13 +448,9 @@ gap:15px;
 margin-top:16px
 }
 
-.page-toolbar h2{
-margin:0
-}
+.page-toolbar h2{margin:0}
 
-.sleeper-banner{
-border-color:var(--blue)
-}
+.sleeper-banner{border-color:var(--blue)}
 
 .sleeper-banner-actions{
 display:flex;
@@ -558,18 +553,14 @@ padding-bottom:12px;
 border-bottom:1px solid var(--border)
 }
 
-.roster-title h3{
-margin:4px 0 0
-}
+.roster-title h3{margin:4px 0 0}
 
 .roster-meta{
 color:var(--muted);
 font-size:12px
 }
 
-.roster-list{
-margin-top:8px
-}
+.roster-list{margin-top:8px}
 
 .roster-player{
 display:grid;
@@ -580,22 +571,16 @@ padding:11px 0;
 border-bottom:1px solid var(--border)
 }
 
-.roster-player:last-child{
-border-bottom:0
-}
+.roster-player:last-child{border-bottom:0}
 
-.roster-value{
-font-weight:900
-}
+.roster-value{font-weight:900}
 
 .not-valued{
 font-size:10px;
 color:var(--muted)
 }
 
-.section-heading{
-margin:0
-}
+.section-heading{margin:0}
 
 @media(max-width:900px){
 .trade-grid{grid-template-columns:1fr}
@@ -620,7 +605,12 @@ header{display:block}
 <header>
 
 <div class="brand">
-<div class="logo">TF</div>
+
+<div class="logo">
+<img
+alt="TradeForge Fantasy Logo"
+src="data:image/jpeg;base64,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">
+</div>
 
 <div>
 <h1>TradeForge Fantasy</h1>
@@ -651,6 +641,8 @@ Sleeper League
 
 </header>
 
+
+<!-- HOME CALCULATOR -->
 
 <main id="home-page">
 
@@ -705,9 +697,7 @@ Sleeper League
 
 <section class="card">
 
-<h3 class="section-heading">
-Top Players
-</h3>
+<h3 class="section-heading">Top Players</h3>
 
 <div class="top-grid" style="margin-top:10px">
 
@@ -738,30 +728,16 @@ Top Players
 
 <div class="trade-grid">
 
-
 <section class="team card">
 
-<h2>
-Team A
-</h2>
+<h2>Team A</h2>
 
 <div class="search-wrap">
-
-<input
-id="home-search-a"
-placeholder="Search player or pick"
-autocomplete="off"
->
-
-<div
-id="home-results-a"
-class="results">
-</div>
-
+<input id="home-search-a" placeholder="Search player or pick" autocomplete="off">
+<div id="home-results-a" class="results"></div>
 </div>
 
 <div id="home-team-a"></div>
-
 
 <div class="totals">
 
@@ -787,37 +763,18 @@ class="results">
 </div>
 
 <div id="home-verdict" class="verdict">
-
 Build a Trade
-
-<small>
-Add players to both sides.
-</small>
-
+<small>Add players to both sides.</small>
 </div>
 
 <div class="grade">
-
-<span>
-Trade Grade
-</span>
-
-<strong id="home-grade">
-—
-</strong>
-
+<span>Trade Grade</span>
+<strong id="home-grade">—</strong>
 </div>
 
 <div class="actions">
-
-<button id="home-swap">
-Swap Sides
-</button>
-
-<button id="home-clear">
-Clear Trade
-</button>
-
+<button id="home-swap">Swap Sides</button>
+<button id="home-clear">Clear Trade</button>
 </div>
 
 </section>
@@ -825,27 +782,14 @@ Clear Trade
 
 <section class="team card">
 
-<h2>
-Team B
-</h2>
+<h2>Team B</h2>
 
 <div class="search-wrap">
-
-<input
-id="home-search-b"
-placeholder="Search player or pick"
-autocomplete="off"
->
-
-<div
-id="home-results-b"
-class="results">
-</div>
-
+<input id="home-search-b" placeholder="Search player or pick" autocomplete="off">
+<div id="home-results-b" class="results"></div>
 </div>
 
 <div id="home-team-b"></div>
-
 
 <div class="totals">
 
@@ -869,28 +813,13 @@ class="results">
 <div class="analysis">
 
 <section class="card">
-
-<h3>
-What Makes This Fair?
-</h3>
-
-<div id="home-fair">
-Build a trade to see suggestions.
-</div>
-
+<h3>What Makes This Fair?</h3>
+<div id="home-fair">Build a trade to see suggestions.</div>
 </section>
 
-
 <section class="card">
-
-<h3>
-Suggested Package
-</h3>
-
-<div id="home-packages">
-Build a trade to see packages.
-</div>
-
+<h3>Suggested Package</h3>
+<div id="home-packages">Build a trade to see packages.</div>
 </section>
 
 </div>
@@ -898,29 +827,18 @@ Build a trade to see packages.
 </main>
 
 
-<main
-id="sleeper-page"
-class="page-hidden"
->
+<!-- SLEEPER PAGE -->
+
+<main id="sleeper-page" class="page-hidden">
 
 <div class="page-toolbar">
 
 <div>
-
-<h2>
-Sleeper League
-</h2>
-
-<div
-id="sleeper-page-name"
-class="sub">
+<h2>Sleeper League</h2>
+<div id="sleeper-page-name" class="sub"></div>
 </div>
 
-</div>
-
-<button
-id="back-home"
-class="close">
+<button id="back-home" class="close">
 ← Back to Trade Analyzer
 </button>
 
@@ -930,137 +848,53 @@ class="close">
 <section class="card sleeper-banner">
 
 <div class="settings-title">
-
-<span>
-Synced League Settings
-</span>
-
-<span
-id="sleeper-mode-label"
-class="mode-label">
-</span>
-
+<span>Synced League Settings</span>
+<span id="sleeper-mode-label" class="mode-label"></span>
 </div>
-
 
 <div class="settings">
 
 <label class="setting">
-
-<span>
-SCORING
-</span>
-
-<select
-id="sleeper-scoring"
-disabled>
-
-<option value="ppr">
-PPR
-</option>
-
-<option value="half">
-0.5 PPR
-</option>
-
-<option value="standard">
-No PPR
-</option>
-
+<span>SCORING</span>
+<select id="sleeper-scoring" disabled>
+<option value="ppr">PPR</option>
+<option value="half">0.5 PPR</option>
+<option value="standard">No PPR</option>
 </select>
-
 </label>
 
-
 <label class="setting">
-
-<span>
-LEAGUE
-</span>
-
-<select
-id="sleeper-league"
-disabled>
-
-<option value="redraft">
-Redraft
-</option>
-
-<option value="keeper">
-Keeper
-</option>
-
-<option value="dynasty">
-Dynasty
-</option>
-
+<span>LEAGUE</span>
+<select id="sleeper-league" disabled>
+<option value="redraft">Redraft</option>
+<option value="keeper">Keeper</option>
+<option value="dynasty">Dynasty</option>
 </select>
-
 </label>
 
-
 <label class="setting">
-
-<span>
-QB FORMAT
-</span>
-
-<select
-id="sleeper-qb"
-disabled>
-
-<option value="oneqb">
-1QB
-</option>
-
-<option value="superflex">
-Superflex
-</option>
-
+<span>QB FORMAT</span>
+<select id="sleeper-qb" disabled>
+<option value="oneqb">1QB</option>
+<option value="superflex">Superflex</option>
 </select>
-
 </label>
 
-
 <label class="setting">
-
-<span>
-TE PREMIUM
-</span>
-
-<select
-id="sleeper-tep"
-disabled>
-
-<option value="off">
-Off
-</option>
-
-<option value="half">
-+0.5 PPR
-</option>
-
-<option value="full">
-+1.0 PPR
-</option>
-
+<span>TE PREMIUM</span>
+<select id="sleeper-tep" disabled>
+<option value="off">Off</option>
+<option value="half">+0.5 PPR</option>
+<option value="full">+1.0 PPR</option>
 </select>
-
 </label>
 
 </div>
 
-
 <div class="sleeper-banner-actions">
-
-<button
-id="disconnect"
-class="close">
-
+<button id="disconnect" class="close">
 Disconnect Sleeper
-
 </button>
-
 </div>
 
 </section>
@@ -1069,32 +903,19 @@ Disconnect Sleeper
 <section class="card">
 
 <div class="settings-title">
-
-<span>
-Choose the two Sleeper teams making the trade
-</span>
-
+<span>Choose the two Sleeper teams making the trade</span>
 <span class="sub">
-Selecting a team shows that team's roster below the dropdown.
+Selecting a team now shows that team's roster below the dropdown.
 </span>
-
 </div>
 
-
 <div class="roster-select-grid">
-
 
 <div>
 
 <label class="setting">
-
-<span>
-TEAM A ROSTER
-</span>
-
-<select id="sleeper-roster-a">
-</select>
-
+<span>TEAM A ROSTER</span>
+<select id="sleeper-roster-a"></select>
 </label>
 
 <div
@@ -1108,14 +929,8 @@ class="trade-roster-box">
 <div>
 
 <label class="setting">
-
-<span>
-TEAM B ROSTER
-</span>
-
-<select id="sleeper-roster-b">
-</select>
-
+<span>TEAM B ROSTER</span>
+<select id="sleeper-roster-b"></select>
 </label>
 
 <div
@@ -1124,7 +939,6 @@ class="trade-roster-box">
 </div>
 
 </div>
-
 
 </div>
 
@@ -1136,7 +950,6 @@ class="trade-roster-box">
 <h3 class="section-heading">
 Top Players
 </h3>
-
 
 <div class="top-grid" style="margin-top:10px">
 
@@ -1167,31 +980,22 @@ Top Players
 
 <div class="trade-grid">
 
-
 <section class="team card">
 
-<h2>
-Team A
-</h2>
+<h2>Team A</h2>
 
 <div class="search-wrap">
-
 <input
 id="sleeper-search-a"
 placeholder="Search selected Team A roster"
-autocomplete="off"
->
-
+autocomplete="off">
 <div
 id="sleeper-results-a"
 class="results">
 </div>
-
 </div>
 
-<div id="sleeper-team-a">
-</div>
-
+<div id="sleeper-team-a"></div>
 
 <div class="totals">
 
@@ -1222,39 +1026,18 @@ class="marker">
 <div
 id="sleeper-verdict"
 class="verdict">
-
 Build a Trade
-
-<small>
-Add players to both sides.
-</small>
-
+<small>Add players to both sides.</small>
 </div>
-
 
 <div class="grade">
-
-<span>
-Trade Grade
-</span>
-
-<strong id="sleeper-grade">
-—
-</strong>
-
+<span>Trade Grade</span>
+<strong id="sleeper-grade">—</strong>
 </div>
 
-
 <div class="actions">
-
-<button id="sleeper-swap">
-Swap Sides
-</button>
-
-<button id="sleeper-clear">
-Clear Trade
-</button>
-
+<button id="sleeper-swap">Swap Sides</button>
+<button id="sleeper-clear">Clear Trade</button>
 </div>
 
 </section>
@@ -1262,28 +1045,20 @@ Clear Trade
 
 <section class="team card">
 
-<h2>
-Team B
-</h2>
+<h2>Team B</h2>
 
 <div class="search-wrap">
-
 <input
 id="sleeper-search-b"
 placeholder="Search selected Team B roster"
-autocomplete="off"
->
-
+autocomplete="off">
 <div
 id="sleeper-results-b"
 class="results">
 </div>
-
 </div>
 
-<div id="sleeper-team-b">
-</div>
-
+<div id="sleeper-team-b"></div>
 
 <div class="totals">
 
@@ -1307,28 +1082,17 @@ class="results">
 <div class="analysis">
 
 <section class="card">
-
-<h3>
-What Makes This Fair?
-</h3>
-
+<h3>What Makes This Fair?</h3>
 <div id="sleeper-fair">
 Build a trade to see suggestions.
 </div>
-
 </section>
 
-
 <section class="card">
-
-<h3>
-Suggested Package
-</h3>
-
+<h3>Suggested Package</h3>
 <div id="sleeper-packages">
 Build a trade to see packages.
 </div>
-
 </section>
 
 </div>
@@ -1340,27 +1104,17 @@ Build a trade to see packages.
 League Rosters
 </h3>
 
-
 <div
 class="roster-view-grid"
-style="margin-top:12px"
->
-
+style="margin-top:12px">
 
 <section class="roster-card">
 
 <div class="roster-title">
 
 <div>
-
-<div class="roster-meta">
-YOUR TEAM
-</div>
-
-<h3 id="my-team-name">
-Your Team
-</h3>
-
+<div class="roster-meta">YOUR TEAM</div>
+<h3 id="my-team-name">Your Team</h3>
 </div>
 
 <div
@@ -1369,7 +1123,6 @@ class="roster-meta">
 </div>
 
 </div>
-
 
 <div
 id="my-team-roster"
@@ -1382,32 +1135,17 @@ class="roster-list">
 <section class="roster-card">
 
 <label class="setting">
-
-<span>
-COMPARE WITH TEAM
-</span>
-
-<select id="opponent-select">
-</select>
-
+<span>COMPARE WITH TEAM</span>
+<select id="opponent-select"></select>
 </label>
-
 
 <div
 class="roster-title"
-style="margin-top:15px"
->
+style="margin-top:15px">
 
 <div>
-
-<div class="roster-meta">
-OTHER TEAM
-</div>
-
-<h3 id="opponent-team-name">
-Team
-</h3>
-
+<div class="roster-meta">OTHER TEAM</div>
+<h3 id="opponent-team-name">Team</h3>
 </div>
 
 <div
@@ -1417,14 +1155,12 @@ class="roster-meta">
 
 </div>
 
-
 <div
 id="opponent-team-roster"
 class="roster-list">
 </div>
 
 </section>
-
 
 </div>
 
@@ -1435,25 +1171,21 @@ class="roster-list">
 </div>
 
 
+<!-- SLEEPER LOGIN MODAL -->
+
 <div
 id="modal"
-class="modal-bg"
->
+class="modal-bg">
 
 <div class="modal">
 
 <div class="modal-head">
 
 <div>
-
-<h2>
-Sync Your Sleeper League
-</h2>
-
+<h2>Sync Your Sleeper League</h2>
 <div class="sub">
 Enter your Sleeper username. No password is needed.
 </div>
-
 </div>
 
 <button
@@ -1464,13 +1196,10 @@ class="close">
 
 </div>
 
-
 <input
 id="username"
 placeholder="Sleeper username"
-autocomplete="off"
->
-
+autocomplete="off">
 
 <button
 id="find-leagues"
@@ -1478,11 +1207,9 @@ class="primary">
 Find My Leagues
 </button>
 
-
 <div id="league-wrap">
 
-<select id="league-picker">
-</select>
+<select id="league-picker"></select>
 
 <button
 id="connect-league"
@@ -1491,7 +1218,6 @@ Sync Selected League
 </button>
 
 </div>
-
 
 <div
 id="status"
@@ -1875,9 +1601,7 @@ const playerDatabase=`
 342|WR|Chimere Dike|0.2|3.1|6.6
 343|WR|Brandin Cooks|0.1|0.1|0.1
 344|WR|Mack Hollins|0.1|0.3|0.5
-`.trim()
-.split("\n")
-.map(line=>{
+`.trim().split("\n").map(line=>{
 
 const [
 rank,
@@ -1907,7 +1631,6 @@ const picks=[
 ["2027 Late 1st",36,42],
 ["2027 2nd",22,25],
 ["2027 3rd",10,12],
-
 ["2028 Early 1st",47,53],
 ["2028 Mid 1st",40,46],
 ["2028 Late 1st",33,39],
@@ -2047,6 +1770,8 @@ let sleeperPlayers={};
 let sleeperRosterA="";
 
 let sleeperRosterB="";
+
+let mySleeperRosterId="";
 
 
 function assetsForSettings(
@@ -2626,7 +2351,7 @@ ctx.settings
 
 <button
 class="remove"
-data-remove="${side}|${i}"
+data-remove="${ctx.prefix}|${side}|${i}"
 >
 
 ×
@@ -2654,6 +2379,7 @@ btn.onclick=
 ()=>{
 
 const [
+,
 s,
 index
 ]
@@ -3576,8 +3302,6 @@ sleeperCtx
 }
 
 
-/* This controls which available assets belong to each side */
-
 function pool(
 ctx,
 side
@@ -3630,8 +3354,6 @@ roster;
 }
 
 
-/* FIXED: ADD VALUE TO THE WEAKER SIDE */
-
 function suggestions(
 ctx,
 aa,
@@ -3664,42 +3386,29 @@ return;
 }
 
 
-/*
-If A has less value, weakSide = A.
-If B has less value, weakSide = B.
-*/
-
-const weakSide=
+const losingSide=
 
 aa<ab
-
 ?
-
 "A"
-
 :
-
 "B";
 
 
-const weakTeam=
+const losing=
 
 getTeam(
 ctx,
-weakSide
+losingSide
 );
 
 
 const target=
 
-weakSide==="A"
-
+losingSide==="A"
 ?
-
 ab
-
 :
-
 aa;
 
 
@@ -3718,17 +3427,11 @@ ctx.teamB
 );
 
 
-/*
-CRITICAL FIX:
-Look for additional assets from the weaker side's roster,
-not the stronger side's roster.
-*/
-
 const opts=
 
 pool(
 ctx,
-weakSide
+losingSide
 )
 
 .filter(
@@ -3741,11 +3444,11 @@ key(p)
 .map(
 p=>{
 
-const newValue=
+const n=
 
 adjusted(
 
-weakTeam.concat(p),
+losing.concat(p),
 
 ctx.settings
 
@@ -3756,14 +3459,14 @@ return{
 
 p,
 
-distance:
+d:
 Math.abs(
-newValue-target
+n-target
 ),
 
 pct:
 diff(
-newValue,
+n,
 target
 )
 
@@ -3774,7 +3477,7 @@ target
 
 .sort(
 (a,b)=>
-a.distance-b.distance
+a.d-b.d
 )
 
 .slice(
@@ -3808,7 +3511,7 @@ ${
 </strong>
 
 Add ${esc(o.p.name)}
-to Team ${weakSide}
+to Team ${losingSide}
 
 <br>
 
@@ -3845,8 +3548,6 @@ No matching player was found in the available pool.
 }
 
 
-/* FIXED: PACKAGE ALSO COMES FROM WEAKER SIDE */
-
 function packages(
 ctx,
 aa,
@@ -3879,37 +3580,29 @@ return;
 }
 
 
-const weakSide=
+const losingSide=
 
 aa<ab
-
 ?
-
 "A"
-
 :
-
 "B";
 
 
-const weakTeam=
+const losing=
 
 getTeam(
 ctx,
-weakSide
+losingSide
 );
 
 
 const target=
 
-weakSide==="A"
-
+losingSide==="A"
 ?
-
 ab
-
 :
-
 aa;
 
 
@@ -3928,16 +3621,11 @@ ctx.teamB
 );
 
 
-/*
-CRITICAL FIX:
-Packages are now built from the weaker team's available pool.
-*/
-
 const available=
 
 pool(
 ctx,
-weakSide
+losingSide
 )
 
 .filter(
@@ -3985,11 +3673,11 @@ j<available.length;
 j++
 ){
 
-const newValue=
+const n=
 
 adjusted(
 
-weakTeam.concat(
+losing.concat(
 available[i],
 available[j]
 ),
@@ -4007,14 +3695,14 @@ available[i],
 b:
 available[j],
 
-distance:
+d:
 Math.abs(
-newValue-target
+n-target
 ),
 
 pct:
 diff(
-newValue,
+n,
 target
 )
 
@@ -4027,7 +3715,7 @@ target
 
 list.sort(
 (a,b)=>
-a.distance-b.distance
+a.d-b.d
 );
 
 
@@ -4072,7 +3760,7 @@ ${esc(x.a.name)}
 
 ${esc(x.b.name)}
 
-to Team ${weakSide}
+to Team ${losingSide}
 
 <br>
 
@@ -5202,11 +4890,17 @@ list.forEach(
 x=>{
 
 const option=
-
-new Option(
-x.name,
-x.id
+document.createElement(
+"option"
 );
+
+
+option.value=
+x.id;
+
+
+option.textContent=
+x.name;
 
 
 select.appendChild(
@@ -5215,6 +4909,77 @@ option
 
 }
 );
+
+}
+
+
+function findUserSleeperRoster(){
+
+const userId=
+
+String(
+sleeperUser?.user_id
+||
+""
+);
+
+
+if(
+!userId
+){
+
+return null;
+
+}
+
+
+const ownedRoster=
+
+syncedRosters.find(
+r=>
+String(
+r.owner_id
+||
+""
+)
+===
+userId
+);
+
+
+if(
+ownedRoster
+){
+
+return ownedRoster;
+
+}
+
+
+const coOwnedRoster=
+
+syncedRosters.find(
+r=>
+Array.isArray(
+r.co_owners
+)
+
+&&
+
+r.co_owners.some(
+id=>
+String(id)
+===
+userId
+)
+);
+
+
+return coOwnedRoster
+
+||
+
+null;
 
 }
 
@@ -5257,21 +5022,33 @@ list
 );
 
 
-const mine=
+const myRoster=
 
-list.find(
-x=>
-x.owner
-===
+findUserSleeperRoster();
+
+
+mySleeperRosterId=
+
+myRoster
+
+?
+
 String(
-sleeperUser?.user_id
+myRoster.roster_id
 )
+
+:
+
+String(
+list[0]?.id
+||
+""
 );
 
 
 sleeperRosterA=
 
-mine?.id
+mySleeperRosterId
 
 ||
 
@@ -5321,6 +5098,7 @@ $("sleeper-roster-a")
 e=>{
 
 sleeperRosterA=
+
 String(
 e.target.value
 );
@@ -5359,6 +5137,7 @@ $("sleeper-roster-b")
 e=>{
 
 sleeperRosterB=
+
 String(
 e.target.value
 );
@@ -5507,31 +5286,94 @@ null;
 
 function getMyRosterId(){
 
-return
+if(
 
-syncedRosters
+mySleeperRosterId
 
-.find(
+&&
+
+syncedRosters.some(
 r=>
 String(
-r.owner_id
+r.roster_id
 )
 ===
 String(
-sleeperUser?.user_id
+mySleeperRosterId
 )
 )
 
-?.roster_id
+){
 
+return String(
+mySleeperRosterId
+);
+
+}
+
+
+const myRoster=
+
+findUserSleeperRoster();
+
+
+if(
+myRoster
+){
+
+mySleeperRosterId=
+
+String(
+myRoster.roster_id
+);
+
+
+return mySleeperRosterId;
+
+}
+
+
+if(
+
+sleeperRosterA
+
+&&
+
+syncedRosters.some(
+r=>
+String(
+r.roster_id
+)
+===
+String(
+sleeperRosterA
+)
+)
+
+){
+
+mySleeperRosterId=
+
+String(
+sleeperRosterA
+);
+
+
+return mySleeperRosterId;
+
+}
+
+
+mySleeperRosterId=
+
+String(
+syncedRosters[0]?.roster_id
 ||
+""
+);
 
-syncedRosters[0]
-?.roster_id
 
-||
-
-"";
+return mySleeperRosterId;
 
 }
 
@@ -5879,6 +5721,8 @@ sleeperPlayers={};
 sleeperRosterA="";
 
 sleeperRosterB="";
+
+mySleeperRosterId="";
 
 sleeperCtx.teamA=[];
 
